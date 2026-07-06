@@ -24,7 +24,7 @@ public class BillingServiceGrpcClient {
        log.info("Connecting to Billing Service GRPC service at {}:{}", serverAddress, serverPort);
         ManagedChannel channel = ManagedChannelBuilder.forAddress(serverAddress,
                 serverPort).usePlaintext().build();
-
+        log.info("GRPC CONFIG => {}:{}", serverAddress, serverPort);
         blockingStub = BillingServiceGrpc.newBlockingStub(channel);
     }
 
